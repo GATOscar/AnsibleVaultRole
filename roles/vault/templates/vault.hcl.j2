@@ -1,8 +1,12 @@
 storage "s3" {
-  access_key = "AKIAJQHS6XLZU5H7ZPWQ"
-  secret_key = "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"
-  bucket = "vault-secret-lievano-a113"
-  region = "us-east-1"
+## Here, inside quotes, introduce the access_key of the bucket
+  access_key = "Your access_key"
+## Here, inside quotes, introduce the secret_key of the bucket
+  secret_key = "your secret_key"
+## Here, inside quotes, introduce the name of the bucket
+  bucket = "Your bucket for vault"
+## Here, inside quotes, introduce the region of the bucket
+  region = "The region of your bucket"
 }
 
 listener "tcp" {
