@@ -28,13 +28,15 @@ ansible-playbook playbook.yml
 Before further reading check typo inside edited files where changes where made, after that maybe this could help:
 
 _Error initializing: Put http://0.0.0.0:8200/v1/sys/init: dial tcp 0.0.0.0:8200: connect: connection refused_
-  check enviroment vars and make sure that your playbook´s locations is algo in $PATH also make sure you added VAULT_ADDR address properly.
-  make sure both inventory and vault.hcl.j2 list "http" instead of "https" if one of those isn´t "http" isn´t going to work.
-  delete the info inside the bucket, sometimes it requires an empty bucket to work.
+  * check enviroment vars and make sure that your playbook´s locations is algo in $PATH also make sure you added VAULT_ADDR address properly.
+  * make sure both inventory and vault.hcl.j2 list "http" instead of "https" if one of those isn´t "http" isn´t going to work.
+  * delete the info inside the bucket, sometimes it requires an empty bucket to work.
+  
 _/bin/sh: vault: command not found"_
-  vault isn´t properly initialized, run the playbook again.
-  make sure your instance works with the folder path listed in the playbook, if no, change the folder path or create it inside your           instance.
+  * vault isn´t properly initialized, run the playbook again.
+  * make sure your instance works with the folder path listed in the playbook, if no, change the folder path or create it inside your           instance.
+  
 _vault is already initialized_
-  vault is already running in the machine, if the playbook isn´t finished by this point, you have to kill the instance and try it again;     vault service once initialized, shares it´s keys and NEVES does it again.
-  vault began it´s service, but wasn´t able to promt it´s keys, delete the instance and try it again, make shure, there is no security       group or ACL blocking the conection to port 8200.
+  * vault is already running in the machine, if the playbook isn´t finished by this point, you have to kill the instance and try it again;     vault service once initialized, shares it´s keys and NEVES does it again.
+  * vault began it´s service, but wasn´t able to promt it´s keys, delete the instance and try it again, make shure, there is no security       group or ACL blocking the conection to port 8200.
   
